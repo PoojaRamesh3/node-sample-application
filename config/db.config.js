@@ -5,10 +5,11 @@ const connect = () => {
   const userName = process.env.USER;
   const password = process.env.PASSWORD;
   const database = process.env.DB;
+  const dialect = process.env.DIALECT;
 
   const sequelize = new Sequelize(database, userName, password, {
     host: hostName,
-    operatorsAliases: false,
+    dialect: dialect,
     pool: {
       max: 10,
       min: 0,
